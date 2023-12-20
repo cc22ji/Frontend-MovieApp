@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import  { useEffect } from 'react';
 import { addMovies, addTvSeries,addPopularData} from '../../redux/slice/MovieSlice';
 import {useDispatch} from "react-redux"
 

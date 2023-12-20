@@ -27,7 +27,7 @@ function UserInfo() {
             "Content-Type": "application/json",
           },
         });
-        if (response.statusText == "OK"||response.status == 200) {
+        if (response.statusText === "OK"||response.status === 200) {
           setUserinfo(response.data);
         }
       } catch (error) {
@@ -50,7 +50,7 @@ function UserInfo() {
     const cookies = document.cookie.split("; ");
     for (const cookie of cookies) {
       const [cookieName, cookieValue] = cookie.split("=");
-      if (cookieName == name) {
+      if (cookieName === name) {
         return cookieValue;
       }
     }
@@ -67,8 +67,8 @@ function UserInfo() {
 
   function removeToken() {
     const tokenValue = getCookie("token");
-    // setCookie("token", " ", 7);
-    // naviagte("/login");
+    setCookie(tokenValue, " ", 7);
+    naviagte("/login");
   }
 
   return (

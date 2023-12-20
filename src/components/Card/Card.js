@@ -1,6 +1,5 @@
 
 import {Link} from "react-router-dom"
-import { useNavigate } from "react-router-dom";
 import React from 'react';
 import axios from 'axios';
 import { MdLocalMovies } from "react-icons/md";
@@ -25,7 +24,7 @@ function Card(props){
       async  function handleevent(id,e){
         e.preventDefault()
         try {
-          const response = await axios.delete(`${deletebookmarkURL}/${id}`, {
+           await axios.delete(`${deletebookmarkURL}/${id}`, {
             withCredentials: true,
             headers: {
               'Content-Type': 'application/json',

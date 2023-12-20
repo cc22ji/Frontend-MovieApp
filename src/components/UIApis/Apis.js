@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import { setTrendingData } from "../../redux/slice/MovieSlice";
 
 import { useDispatch } from "react-redux";
@@ -50,7 +50,7 @@ function Apis() {
               },
               body: JSON.stringify(popularMoviesData),
             });
-            const result = await response.json();
+            await response.json();
           } catch (error) {
             // console.log("Unable to save movie Data")
           }
@@ -73,7 +73,7 @@ function Apis() {
               },
               body: JSON.stringify(popularTvSeriesData),
             });
-            const result = await response.json();
+             await response.json();
           } catch (error) {
             // console.log("Unable to save Tv Data");
           }
@@ -98,7 +98,7 @@ function Apis() {
             },
             body: JSON.stringify(randomPopularData2),
           });
-          const result = await response.json();
+          await response.json();
         } catch (error) {
           // console.log("Unable to save popular Data")
         }
@@ -107,7 +107,7 @@ function Apis() {
       }
     };
     fetchData();
-  }, []);
+  }, [dispatch]);
 
   // Function to mix movies and TV series in a single array
   const mixData = (movies, tvSeries) => {

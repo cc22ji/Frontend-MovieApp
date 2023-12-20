@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { CiSearch } from "react-icons/ci";
@@ -11,8 +11,7 @@ import TvCard from "../Card/TvCard";
 import Apis from "../UIApis/Apis";
 import ApiCall from "../UIApis/ApiCalls";
 
-const backendUrl = process.env.BACKEND_BASE_URL || "https://movieapp-backend-x3ry.onrender.com";
-const searchURL = `${backendUrl}/seachitem`;
+
 
 function TvSeries() {
   Apis();

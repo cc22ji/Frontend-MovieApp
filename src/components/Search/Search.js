@@ -1,6 +1,5 @@
 import React, { useEffect , useState} from "react";
 import { useParams } from "react-router-dom"
-
 import { useNavigate } from "react-router-dom";
 import TvCard from '../Card/TvCard';
 import { MdMovieCreation } from "react-icons/md";  // icon  <MdMovieCreation />
@@ -8,7 +7,6 @@ import { IoHome } from "react-icons/io5";  //<IoHome />
 import { PiTelevision } from "react-icons/pi"; //<PiTelevision />
 import { FaRegBookmark } from "react-icons/fa"; //<FaRegBookmark/>
 import { MdLocalMovies } from "react-icons/md";
-import { CiSearch } from "react-icons/ci";
 import { IoArrowBackSharp } from "react-icons/io5";
 
 const apiKey = process.env.API_KEY || "8170440d983c7c26f7238eed689fe9fc"
@@ -24,7 +22,7 @@ function Search(){
 
 
   useEffect(()=>{
-    if(id == "HomePage"){
+    if(id === "HomePage"){
         const fetchData = async () => {
     
             // Function to mix movies and TV series in a single array
@@ -72,7 +70,7 @@ function Search(){
           };
     
           fetchData();
-    }else if(id == "MoviePage"){
+    }else if(id === "MoviePage"){
               const fetchMovieData = async()=>{
                        // Fetch trending movies
                        const searchMoviesEndpoint = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchItem}`;
@@ -82,7 +80,7 @@ function Search(){
                        setMovieData(searchMoviesData)
               }
               fetchMovieData()
-    }else if(id == "TvPage"){
+    }else if(id === "TvPage"){
         const fetchTvData = async()=>{
              // Fetch trending TV series
              const TvSeriesEndpoint = `https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&query=${searchItem}`;
@@ -95,7 +93,7 @@ function Search(){
     
 
     
-  },[id])
+  },[id,searchItem])
   
    let Homedata = "";
   Homedata = (homeData)?
@@ -118,9 +116,9 @@ function Search(){
 
    function navi(){
     // const {id} = useParams()
-    if(id == "MoviePage"){
+    if(id === "MoviePage"){
         naviagte("/movies")
-    }else if(id=="TvPage"){
+    }else if(id==="TvPage"){
         naviagte("/tvseries")
     }else{
         naviagte("/home")
@@ -158,7 +156,7 @@ function Search(){
                   </div>
                   <div className='flex  flex-wrap text-white justify-between'>
                     {
-                        (id=="HomePage")?(<div className="flex flex-wrap flext-start">{Homedata}</div>):(id=="MoviePage")?(<div className="flex flex-wrap flext-start">{renderMovies}</div>):(id=="TvPage")?(<div className="flex flex-wrap flext-start">{rendertv}</div>):null
+                        (id==="HomePage")?(<div className="flex flex-wrap flext-start">{Homedata}</div>):(id==="MoviePage")?(<div className="flex flex-wrap flext-start">{renderMovies}</div>):(id==="TvPage")?(<div className="flex flex-wrap flext-start">{rendertv}</div>):null
                     }
                   </div>
                

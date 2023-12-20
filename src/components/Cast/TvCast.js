@@ -1,5 +1,5 @@
 import React,{ useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { FaImdb } from "react-icons/fa";
 import { GoLink } from "react-icons/go";
 
@@ -41,7 +41,7 @@ function Cast(){
           {/* img div */}
                <div class="w-full h-56 md:h-auto lg:w-1/3 bg-slate-800 p-4 md:p-8 ">
                 <div className='flex justify-center  md:h-4/6 border-2 border-black '>
-                  <img src={`https://image.tmdb.org/t/p/w500${(movieDetails.backdrop_path!== "")?movieDetails.backdrop_path:movieDetails.poster_path}`} className='rounded md:w-full lg:w-auto '/>
+                  <img src={`https://image.tmdb.org/t/p/w500${(movieDetails.backdrop_path!== "")?movieDetails.backdrop_path:movieDetails.poster_path}`} alt="/" className='rounded md:w-full lg:w-auto '/>
                 </div>
                </div>
                {/* details div */}

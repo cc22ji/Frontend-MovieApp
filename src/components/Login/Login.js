@@ -23,41 +23,43 @@ function Login(){
         setPassword(e.target.value)
     }
 
-    async function handleFormSubmit(e){
-        e.preventDefault();
+    // async function handleFormSubmit(e){
+    //     e.preventDefault();
 
-        const LoginData = {
-            email:email,
-            password:password
-        }
-        try {
-            const response = await fetch(LoginURL, {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify( LoginData ),
-            });
+    //     const LoginData = {
+    //         email:email,
+    //         password:password
+    //     }
+    //     try {
+    //         const response = await fetch(LoginURL, {
+    //           method: 'POST',
+    //           headers: {
+    //             'Content-Type': 'application/json',
+    //           },
+    //           body: JSON.stringify( LoginData ),
+    //         });
       
-            const result = await response.json();
-            if(result.status === "success"){
-                setSuccess(result.message || "Login Succcessfully")
-                setError(null)
-                setShow(true)
-                naviagte("/home");
-                setEmail("")
-                setPassword("")
-            }else{
-                setError(result.message || "Login Failed")
+    //         const result = await response.json();
+    //         if(result.status === "success"){
+    //             setSuccess(result.message || "Login Succcessfully")
+    //             setError(null)
+    //             setShow(true)
+    //             naviagte("/home");
+    //             setEmail("")
+    //             setPassword("")
+    //         }else{
+    //             setError(result.message || "Login Failed")
                 
-                setSuccess(null)
+    //             setSuccess(null)
                 
-            }
-          } catch (error) {
-            setError(error || "Unable to Login")
-          }
+    //         }
+    //       } catch (error) {
+    //         setError(error || "Unable to Login")
+    //       }
 
-    }
+    // }
+
+    
     return(
         <div className="bg-slate-900">
         <div class="flex flex-col items-center justify-center h-screen dark">
@@ -71,7 +73,7 @@ function Login(){
       }
       <div class="flex items-center justify-between flex-wrap">
         
-        <a class="text-sm text-blue-500 hover:underline mb-0.5" href="#">Forgot password?</a>
+        <a class="text-sm text-blue-500 hover:underline mb-0.5" href="/login">Forgot password?</a>
         <p class="text-white mt-"> Don't have an account? <a class="text-sm text-blue-500 -200 hover:underline mt-4" href="/signup">Signup</a></p>
       </div>
       <button class="bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-md mt-4  hover:to-blue-600 transition ease-in-out duration-150" type="submit" 

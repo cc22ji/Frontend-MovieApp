@@ -18,7 +18,7 @@ const BookmarkComponent = () => {
   const [loading, setLoading] = useState(true);
   const [bookmarks, setBookmarks] = useState([]);
   const [status, setStatus] = useState(0);
-  const apiKey = "YOUR_API_KEY"; // Replace with your actual API key
+  
 
 
   // Fetch bookmarks from the backend
@@ -30,7 +30,7 @@ const BookmarkComponent = () => {
       })
       // Access data directly using response.data
       setStatus(response.status)
-      if (response.status == "OK"||response.status == 200) {
+      if (response.status === "OK"||response.status === 200) {
         setBookmarks(response.data);
        
         setLoading(false)
@@ -62,7 +62,7 @@ const BookmarkComponent = () => {
     <div>
       {
         (loading) ? (<p>loading.......</p>) : (<div>{
-          (status == 200)?(<div>
+          (status === 200)?(<div>
              <div className="flex flex-col lg:flex-row bg-slate-900 overflow-y-auto">
       {/* left bar */}
           <div className=" w-full lg:w-1/12 bg-slate-900  lg:h-screen ">
