@@ -33,7 +33,7 @@ function ApiCall(){
             }
         }
         fetching()
-    },[])
+    },[dispatch])
 
     
 }

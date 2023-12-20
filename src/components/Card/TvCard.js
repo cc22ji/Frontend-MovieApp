@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import axios from "axios";
 import { FaRegBookmark } from "react-icons/fa";
@@ -41,7 +40,7 @@ function TvCard(props) {
         <div className="m-5 mb-1 bg-slate-900 rounded-xl hover:bg-gray-900 hover:scale-110 z-10 duration-700 relative ">
           <div
             style={{
-              backgroundImage: `url(https://image.tmdb.org/t/p/w500${data.poster_path})`,
+              backgroundImage: `url(https://image.tmdb.org/t/p/w500${data.poster_path})`,alt:"/"
             }}
             className="rounded bg-cover bg-no-repeat bg-top h-24 "
           >

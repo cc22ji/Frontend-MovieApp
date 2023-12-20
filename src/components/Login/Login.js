@@ -1,13 +1,11 @@
 
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 
-const backendUrl = process.env.BACKEND_BASE_URL || "https://movieapp-backend-x3ry.onrender.com"
-const LoginURL = `${backendUrl}/login`
+
 
 function Login(){
 
-    const naviagte = useNavigate();
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
