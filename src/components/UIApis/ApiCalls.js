@@ -3,7 +3,7 @@ import { addMovies, addTvSeries,addPopularData} from '../../redux/slice/MovieSli
 import {useDispatch} from "react-redux"
 
 
-const backendUrl = process.env.BACKEND_BASE_URL || "https://movieapp-backend-x3ry.onrender.com"
+const backendUrl = "https://movieapp-backend-x3ry.onrender.com"
 const MovieUrl =  `${backendUrl}/api/g1/moviedata`
 const TvDataUrl = `${backendUrl}/api/g1/tvdata`
 const HomeDataUrl =`${backendUrl}/api/g1/populardata`
